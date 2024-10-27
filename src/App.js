@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Wizard } from './components/Wizard';
+import { useState } from 'react';
+// index.js או App.js
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  const[counter,setCounter]=useState(1);
+  const totalSteps=20;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button className="btn btn-success" onClick={() => {
+        if (counter > 1) {
+          setCounter(counter - 1);
+        }
+      }}>prev</button>
+      <button className="btn btn-success" onClick={() => {
+        if (counter < totalSteps) {
+          setCounter(counter + 1);
+        }
+      }}>next</button>      
+      <Wizard counter={counter} totalSteps={totalSteps}/>
+      <div>QA:{counter}</div>
     </div>
   );
 }
