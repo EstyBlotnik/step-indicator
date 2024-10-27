@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const Step = ({num,counter}) => {
-  return (
+  return (    
     <div className={`circle ${num <= counter ? 'smalli' : 'largei'}`}>
-        {num}
+        {num >= counter ? num : "✓"}
     </div>
   )
 }
