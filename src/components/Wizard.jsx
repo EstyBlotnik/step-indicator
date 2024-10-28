@@ -1,11 +1,11 @@
-import { Step } from './Step'
+import { Step } from "./Step";
 
-export const Wizard = ({counter, totalSteps}) => {
+export const Wizard = ({ counter, totalSteps }) => {
   return (
     <div className="steps-container">
-        {Array.from({ length: totalSteps }, (_, index) => (
-            <Step num={(index + 1).toString()} counter={counter} />
-        ))}
+      {Array.from({ length: totalSteps }, (_, index) => (
+        <Step num={(index + 1).toString()} counter={counter} />
+      ))}
     </div>
-  )
-}
+  );
+};
